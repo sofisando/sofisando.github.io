@@ -21,6 +21,7 @@ function App() {
           <h1 className='text-3xl bg-amber-300 text-red-500'>hola prueba</h1>
 
 <br />
+<h1 className='bg-green-500'>VAMMOOOS QUE FUNCIONAAA</h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
