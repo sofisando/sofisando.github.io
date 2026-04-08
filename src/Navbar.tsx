@@ -34,12 +34,12 @@ function Navbar() {
               <path d="m6 6 12 12" />
             </svg>
 
-            <ul className="absolute insert-0 bg-(--bg)
+            <ul className="fixed inset-0 bg-(--bg)
           flex flex-col gap-8 
           justify-center items-center
           
           -translate-y-full
-          peer-checked:translate-0
+          peer-checked:translate-y-0 
           transition-transform
 
           ">
