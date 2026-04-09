@@ -6,18 +6,16 @@ function Navbar() {
   return (
     <nav className="py-8 border-b border-(--color-details) rounded-2xl">
       
-      <div className="flex w-9/10 mx-auto justify-end relative">
+      <div className="flex w-9/10 mx-auto justify-end items-center relative">
 
-        {/* BOTÓN */}
+        {/* BOTÓN (solo mobile) */}
         <button
           onClick={() => setOpen(!open)}
-          className="top-8 right-8 z-50 cursor-pointer"
+          className="z-50 md:hidden"
         >
-          {/* ☰ */}
-          {!open && (
+          {!open ? (
             <svg
               className="w-7 h-7 stroke-(--color-details)"
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -27,13 +25,9 @@ function Navbar() {
               <path d="M4 12h16" />
               <path d="M4 19h16" />
             </svg>
-          )}
-
-          {/* ✕ */}
-          {open && (
+          ) : (
             <svg
               className="w-7 h-7 stroke-(--color-details)"
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -48,19 +42,20 @@ function Navbar() {
         {/* MENÚ */}
         <ul
           className={`
-            fixed inset-0 z-40 bg-(--bg)
-            flex flex-col gap-8 justify-center items-center
+            flex gap-8 items-center
 
+            /* MOBILE */
+            fixed inset-0 bg-(--bg) flex-col justify-center
             transition-transform duration-300
+
             ${open ? "translate-y-0" : "-translate-y-full"}
+
+            /* DESKTOP */
+            md:static md:flex md:flex-row md:translate-y-0 md:bg-transparent
           `}
         >
           <li>
-            <a
-              href="#"
-              onClick={() => setOpen(false)}
-              className="bg-(--color-button) text-black py-4 px-6 rounded-full"
-            >
+            <a href="#" onClick={() => setOpen(false)}>
               Acerca de mi
             </a>
           </li>
@@ -70,7 +65,11 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => setOpen(false)}>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="bg-(--color-button) text-black py-3 px-6 rounded-full"
+            >
               Contacto
             </a>
           </li>
