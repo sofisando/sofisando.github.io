@@ -4,7 +4,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="py-8 border-b border-(--color-details) rounded-2xl">
+    <nav className="relative z-50 py-8 border-b border-(--color-details) rounded-2xl">
       
       <div className="flex w-9/10 mx-auto justify-end items-center relative">
 
@@ -45,7 +45,7 @@ function Navbar() {
             flex gap-8 items-center
 
             /* MOBILE */
-            fixed inset-0 bg-(--bg) flex-col justify-center
+            fixed inset-0 z-40 bg-(--bg) flex-col justify-center
             transition-transform duration-300
 
             ${open ? "translate-y-0" : "-translate-y-full"}
