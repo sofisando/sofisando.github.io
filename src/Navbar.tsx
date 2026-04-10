@@ -55,12 +55,19 @@ function Navbar() {
           `}
         >
           <li>
-            <a href="#" onClick={() => setOpen(false)}>
+            <a href="#" 
+            className="relative inline-block after:absolute after:left-0 after:bottom-0 
+              after:h-px after:w-0 after:bg-(--color-details) 
+              after:transition-all after:duration-300 hover:after:w-full"
+            onClick={() => setOpen(false)}>
               Acerca de mi
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => setOpen(false)}>
+            <a href="#" 
+            className="relative inline-block after:absolute after:left-0 after:bottom-0 
+              after:h-px after:w-0 after:bg-(--color-details) 
+              after:transition-all after:duration-300 hover:after:w-full"onClick={() => setOpen(false)}>
               Proyectos
             </a>
           </li>
