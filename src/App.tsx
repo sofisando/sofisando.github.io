@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Proyect from "./Proyect";
 import "./App.css"
+import About_me from "./About_me";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* 📦 TU APP */}
       <div id="root" className="relative z-10">
         <Navbar />
+        <About_me/>
         <Proyect />
         <Footer />
       </div>
