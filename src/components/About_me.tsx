@@ -7,7 +7,7 @@ function About_me() {
           <path d="..."></path>
         </mask>
         <image
-          href="./assets/yo.png"
+          href="./assets/yo.png" //imagen mia
           height="100%"
           width="100%"
           mask="url(#blob1)"
