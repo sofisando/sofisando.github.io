@@ -42,7 +42,7 @@ export const projects: Project[] = [
     status: "En desarrollo",
 
     // Agregá estos campos cuando tengas las URL definitivas.
-    // repository: "URL_REAL_DE_TU_REPOSITORIO",
-    // video: "https://www.youtube.com/embed/ID_DEL_VIDEO",
+    repository: "https://github.com/sofisando/ForIt-Ecommerce.git",
+    video: "https://www.youtube.com/embed/uXfRfZKT3S8",
   },
 ];

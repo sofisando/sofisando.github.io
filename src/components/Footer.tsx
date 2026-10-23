@@ -5,14 +5,14 @@ function Footer() {
         <nav>
           <ul className="flex flex-wrap gap-8 justify-evenly">
             <li>
-              <a href="#"
+              <a href="https://github.com/sofisando"
               className="relative inline-block after:absolute after:left-0 after:bottom-0 
               after:h-px after:w-0 after:bg-(--color-details) 
               after:transition-all after:duration-300 hover:after:w-full"
               >GitHub</a>
             </li>
              <li>
-              <a href="#"
+              <a href="https://www.linkedin.com/in/sofia-sandobal/"
               className="relative inline-block after:absolute after:left-0 after:bottom-0 
               after:h-px after:w-0 after:bg-(--color-details) 
               after:transition-all after:duration-300 hover:after:w-full"
