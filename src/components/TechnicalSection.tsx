@@ -39,7 +39,7 @@ function TechnicalSection({ section, index }: TechnicalSectionProps) {
         className="w-full p-6 md:p-8 text-left"
       >
         <div className="flex items-center justify-between gap-5">
-          <div className="flex items-center gap-4 min-w-0">
+          <div className="flex items-center gap-4 min-w-0 ">
 
              <span className="shrink-0 text-sm opacity-50 font-mono">
               {String(index + 1).padStart(2, "0")}
@@ -95,7 +95,7 @@ function TechnicalSection({ section, index }: TechnicalSectionProps) {
             ))}
 
             {section.items && section.items.length > 0 && (
-              <ul className="space-y-4">
+              <ul className="space-y-4 m-6">
                 {section.items.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="opacity-60" aria-hidden="true">

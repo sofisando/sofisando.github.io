@@ -128,7 +128,7 @@ function ProjectDetailPage() {
         {/* Secciones técnicas dinámicas */}
         {project.sections.length > 0 && (
           <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold pb-4">
               Detalles técnicos
             </h2>
 
