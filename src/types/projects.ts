@@ -5,6 +5,18 @@ export interface Technology {
   icon?: string;
 }
 
+export interface ProjectSection {
+  id: string;
+  title: string;
+  summary: string;
+  icon?: string;
+  paragraphs?: string[];
+  items?: string[];
+  image?: string;
+  imageAlt?: string;
+  code?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -13,9 +25,10 @@ export interface Project {
   image: string;
   technologies: string[];
   categories: string[];
-  architecture: string[];
-  security: string[];
+  status: string;
+
+  sections: ProjectSection[];
+
   repository?: string;
   video?: string;
-  status: string;
 }

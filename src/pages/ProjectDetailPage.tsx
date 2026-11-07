@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import TechnicalSection from "../components/TechnicalSection";
 import { projects } from "../data/projects";
 import { technologies } from "../data/technologies";
 
@@ -12,15 +13,19 @@ function ProjectDetailPage() {
     return (
       <>
         <Navbar />
+
         <main className="w-9/10 max-w-5xl mx-auto py-20">
           <h1 className="text-3xl font-bold">Proyecto no encontrado</h1>
+
           <p className="py-4">
             El proyecto que buscás no existe o ya no está disponible.
           </p>
+
           <Link to="/proyectos" className="underline">
             Volver a los proyectos
           </Link>
         </main>
+
         <Footer />
       </>
     );
@@ -63,8 +68,8 @@ function ProjectDetailPage() {
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-7">
-            {project.repository && (
+          {project.repository && (
+            <div className="flex flex-wrap gap-4 mt-7">
               <a
                 href={project.repository}
                 target="_blank"
@@ -73,10 +78,10 @@ function ProjectDetailPage() {
               >
                 Ver repositorio en GitHub ↗
               </a>
-            )}
-          </div>
+            </div>
+          )}
 
-        {/* Tecnologías */}
+          {/* Tecnologías */}
           <div id="tool" className="pt-4">
             <ul className="flex flex-wrap items-center gap-4">
               {project.technologies.map((technologyId) => {
@@ -120,38 +125,24 @@ function ProjectDetailPage() {
           />
         </div>
 
-        {/* Arquitectura y seguridad */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-          <section className="rounded-3xl border border-(--color-details) p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-5">Arquitectura y diseño</h2>
+        {/* Secciones técnicas dinámicas */}
+        {project.sections.length > 0 && (
+          <section className="mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Detalles técnicos
+            </h2>
 
-            <ul className="space-y-4">
-              {project.architecture.map((item) => (
-                <li key={item} className="flex gap-3 leading-relaxed">
-                  <span className="opacity-60" aria-hidden="true">
-                    ↗
-                  </span>
-                  <span>{item}</span>
-                </li>
+            <div className="flex flex-col gap-5">
+              {project.sections.map((section, index) => (
+                <TechnicalSection
+                  key={section.id}
+                  section={section}
+                  index={index}
+                />
               ))}
-            </ul>
+            </div>
           </section>
-
-          <section className="rounded-3xl border border-(--color-details) p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-5">Seguridad</h2>
-
-            <ul className="space-y-4">
-              {project.security.map((item) => (
-                <li key={item} className="flex gap-3 leading-relaxed">
-                  <span className="opacity-60" aria-hidden="true">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
+        )}
 
         {/* Demostración */}
         {project.video && (
@@ -160,6 +151,7 @@ function ProjectDetailPage() {
               <h2 className="text-2xl md:text-3xl font-bold">
                 Demostración técnica
               </h2>
+
               <p className="mt-2 opacity-75">
                 Una explicación práctica del funcionamiento y las decisiones
                 técnicas del proyecto.
